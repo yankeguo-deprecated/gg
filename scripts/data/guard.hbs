@@ -1,0 +1,11 @@
+
+{{#each this.data}}
+// Must{{this.i}} panic err if not nil, else return remaining values
+func Must{{this.i}}[{{this.T}}]({{this.A}}, err error) ({{this.RT}}) {
+    if err != nil {
+        panic(err)
+    }
+    return {{this.R}}
+}
+
+{{/each}}

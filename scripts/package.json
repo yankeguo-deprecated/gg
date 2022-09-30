@@ -1,0 +1,12 @@
+{
+  "name": "gg-scripts",
+  "private": true,
+  "main": "index.js",
+  "version": "1.0.0",
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.13",
+    "fs-extra": "^10.1.0",
+    "handlebars": "^4.7.7",
+    "lodash": "^4.17.21"
+  }
+}

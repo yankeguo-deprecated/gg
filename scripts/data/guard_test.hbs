@@ -1,0 +1,39 @@
+
+{{#each this.data}}
+func TestMust{{this.i}}(t *testing.T) {
+	{
+		var err error
+		var (
+{{#each this.j}}
+            v{{this}} int
+{{/each}}
+		)
+		func() {
+			defer Guard(&err)
+			{{this.R}} = Must{{this.i}}({{this.J}}, errors.New("hello"))
+		}()
+		require.Error(t, err)
+		require.Equal(t, "hello", err.Error())
+{{#each this.j}}
+		require.Equal(t, 0, v{{this}})
+{{/each}}
+	}
+	{
+		var err error
+        var (
+{{#each this.j}}
+            v{{this}} int
+{{/each}}
+        )
+		func() {
+			defer Guard(&err)
+            {{this.R}} = Must{{this.i}}({{this.J}}, nil)
+		}()
+		require.NoError(t, err)
+{{#each this.j}}
+		require.Equal(t, {{this}}, v{{this}})
+{{/each}}
+	}
+}
+
+{{/each}}

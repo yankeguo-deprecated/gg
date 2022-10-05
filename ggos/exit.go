@@ -1,7 +1,7 @@
 package ggos
 
 import (
-	"log"
+	"github.com/guoyk93/gg"
 	"os"
 )
 
@@ -43,5 +43,5 @@ func DefaultOnExit(err *error) {
 	if *err == nil {
 		return
 	}
-	log.Println("exited with error:", (*err).Error())
+	gg.Log("exited with error:", (*err).Error())
 }

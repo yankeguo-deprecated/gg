@@ -25,7 +25,6 @@ var (
 type sysLogger struct{}
 
 func (n *sysLogger) Log(v ...interface{}) {
-	log.Println()
 	_ = log.Output(2, fmt.Sprint(v...))
 }
 

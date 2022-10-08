@@ -1,5 +1,15 @@
 const _ = require("lodash");
 
+const TUPLE_FIELDS = [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+]
+
 const DATA = [];
 
 for (let i = 0; i < 5; i++) {
@@ -12,6 +22,7 @@ for (let i = 0; i < 5; i++) {
             I: "",
             IV: "",
             O: "",
+            TUPLE: "",
         };
 
         const ranges_i = _.range(1, i + 1);
@@ -27,6 +38,12 @@ for (let i = 0; i < 5; i++) {
         for (const sj of ranges_j) {
             G.push("O" + sj + " any");
             GT.push("O" + sj)
+        }
+
+        if (OBJ.i > 1 && OBJ.j === 0) {
+            OBJ.TUPLE = _.map(ranges_i, function (i) {
+                return TUPLE_FIELDS[i-1] + " I"+i
+            }).join("; ")
         }
 
         OBJ.G = G.join(", ");

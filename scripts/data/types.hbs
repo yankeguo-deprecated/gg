@@ -11,4 +11,9 @@
     type D{{i}}{{j}}{{#if this.G}}[{{this.G}}]{{/if}} interface {
         Do({{this.I}}) {{#if this.O}}({{this.O}}){{/if}}
     }
+
+    {{#if this.TUPLE}}
+        // T{{i}} tuple with {{i}} fields
+        type T{{i}}[{{this.G}}] struct { {{this.TUPLE}} }
+    {{/if}}
 {{/each}}

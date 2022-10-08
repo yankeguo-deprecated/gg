@@ -136,6 +136,12 @@ type D20[I1 any, I2 any] interface {
 	Do(i1 I1, i2 I2)
 }
 
+// T2 tuple with 2 fields
+type T2[I1 any, I2 any] struct {
+	A I1
+	B I2
+}
+
 // F21 function with 2 arguments and 1 returns
 type F21[I1 any, I2 any, O1 any] func(i1 I1, i2 I2) (o1 O1)
 
@@ -196,6 +202,13 @@ type D30[I1 any, I2 any, I3 any] interface {
 	Do(i1 I1, i2 I2, i3 I3)
 }
 
+// T3 tuple with 3 fields
+type T3[I1 any, I2 any, I3 any] struct {
+	A I1
+	B I2
+	C I3
+}
+
 // F31 function with 3 arguments and 1 returns
 type F31[I1 any, I2 any, I3 any, O1 any] func(i1 I1, i2 I2, i3 I3) (o1 O1)
 
@@ -254,6 +267,14 @@ func (f F40[I1, I2, I3, I4]) Do(i1 I1, i2 I2, i3 I3, i4 I4) {
 // D40 interface with a single method 4 with arguments and 0 returns
 type D40[I1 any, I2 any, I3 any, I4 any] interface {
 	Do(i1 I1, i2 I2, i3 I3, i4 I4)
+}
+
+// T4 tuple with 4 fields
+type T4[I1 any, I2 any, I3 any, I4 any] struct {
+	A I1
+	B I2
+	C I3
+	D I4
 }
 
 // F41 function with 4 arguments and 1 returns

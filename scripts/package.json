@@ -3,6 +3,9 @@
   "private": true,
   "main": "index.js",
   "version": "1.0.0",
+  "scripts": {
+    "build": "node index.js"
+  },
   "devDependencies": {
     "@types/fs-extra": "^9.0.13",
     "fs-extra": "^10.1.0",

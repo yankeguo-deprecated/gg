@@ -1,0 +1,14 @@
+
+{{#each this.data}}
+    // F{{i}}{{j}} function with {{i}} arguments and {{j}} returns
+    type F{{i}}{{j}}{{#if this.G}}[{{this.G}}]{{/if}} func({{this.I}}) {{#if this.O}}({{this.O}}){{/if}}
+
+    func (f F{{i}}{{j}}{{#if this.GT}}[{{this.GT}}]{{/if}}) Do({{this.I}}) {{#if this.O}}({{this.O}}){{/if}} {
+    {{#if this.O}}return {{/if}} f({{this.IV}})
+    }
+
+    // D{{i}}{{j}} interface with a single method {{i}} with arguments and {{j}} returns
+    type D{{i}}{{j}}{{#if this.G}}[{{this.G}}]{{/if}} interface {
+        Do({{this.I}}) {{#if this.O}}({{this.O}}){{/if}}
+    }
+{{/each}}

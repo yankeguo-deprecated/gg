@@ -1,0 +1,31 @@
+package gg
+
+// __BEGIN_OF_GENERATION__
+
+var (
+	_ D00                                                       = F00(nil)
+	_ D01[int]                                                  = F01[int](nil)
+	_ D02[int, int64]                                           = F02[int, int64](nil)
+	_ D03[int, int64, int32]                                    = F03[int, int64, int32](nil)
+	_ D04[int, int64, int32, bool]                              = F04[int, int64, int32, bool](nil)
+	_ D10[int]                                                  = F10[int](nil)
+	_ D11[int, int64]                                           = F11[int, int64](nil)
+	_ D12[int, int64, int32]                                    = F12[int, int64, int32](nil)
+	_ D13[int, int64, int32, bool]                              = F13[int, int64, int32, bool](nil)
+	_ D14[int, int64, int32, bool, float64]                     = F14[int, int64, int32, bool, float64](nil)
+	_ D20[int, int64]                                           = F20[int, int64](nil)
+	_ D21[int, int64, int32]                                    = F21[int, int64, int32](nil)
+	_ D22[int, int64, int32, bool]                              = F22[int, int64, int32, bool](nil)
+	_ D23[int, int64, int32, bool, float64]                     = F23[int, int64, int32, bool, float64](nil)
+	_ D24[int, int64, int32, bool, float64, string]             = F24[int, int64, int32, bool, float64, string](nil)
+	_ D30[int, int64, int32]                                    = F30[int, int64, int32](nil)
+	_ D31[int, int64, int32, bool]                              = F31[int, int64, int32, bool](nil)
+	_ D32[int, int64, int32, bool, float64]                     = F32[int, int64, int32, bool, float64](nil)
+	_ D33[int, int64, int32, bool, float64, string]             = F33[int, int64, int32, bool, float64, string](nil)
+	_ D34[int, int64, int32, bool, float64, string, byte]       = F34[int, int64, int32, bool, float64, string, byte](nil)
+	_ D40[int, int64, int32, bool]                              = F40[int, int64, int32, bool](nil)
+	_ D41[int, int64, int32, bool, float64]                     = F41[int, int64, int32, bool, float64](nil)
+	_ D42[int, int64, int32, bool, float64, string]             = F42[int, int64, int32, bool, float64, string](nil)
+	_ D43[int, int64, int32, bool, float64, string, byte]       = F43[int, int64, int32, bool, float64, string, byte](nil)
+	_ D44[int, int64, int32, bool, float64, string, byte, rune] = F44[int, int64, int32, bool, float64, string, byte, rune](nil)
+)

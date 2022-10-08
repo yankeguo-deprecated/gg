@@ -1,0 +1,6 @@
+
+var (
+{{#each this.data}}
+    _ D{{this.i}}{{this.j}}{{#if this.TEST_G}}[{{this.TEST_G}}]{{/if}} = F{{this.i}}{{this.j}}{{#if this.TEST_G}}[{{this.TEST_G}}]{{/if}}(nil)
+{{/each}}
+)

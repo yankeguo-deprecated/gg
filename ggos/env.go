@@ -3,6 +3,7 @@ package ggos
 import (
 	"errors"
 	"os"
+	"strconv"
 	"strings"
 )
 
@@ -15,5 +16,13 @@ func MustEnv(key string, out *string) {
 		}
 	} else {
 		*out = val
+	}
+}
+
+// BoolEnv get bool environment variable from key
+func BoolEnv(key string, out *bool) {
+	val := strings.TrimSpace(os.Getenv(key))
+	if val != "" {
+		*out, _ = strconv.ParseBool(val)
 	}
 }

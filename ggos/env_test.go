@@ -23,3 +23,12 @@ func TestMustEnv(t *testing.T) {
 		require.Equal(t, "world", out)
 	})
 }
+
+func TestBoolEnv(t *testing.T) {
+	var out bool
+	os.Setenv("TEST_A", "true")
+	BoolEnv("TEST_A", &out)
+	require.True(t, out)
+	BoolEnv("TEST_B", &out)
+	require.True(t, out)
+}

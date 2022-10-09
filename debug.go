@@ -34,6 +34,10 @@ func (d *debugSet) Debug(v string) bool {
 		return true
 	}
 
+	if _, ok := d.items[DebugWildcard]; ok {
+		return true
+	}
+
 	for {
 		if _, ok := d.items[v+DebugSeparator+DebugWildcard]; ok {
 			return true

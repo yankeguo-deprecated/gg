@@ -18,4 +18,13 @@ func TestDebugSet_Debug(t *testing.T) {
 	require.True(t, ds.Debug("view:aa"))
 	require.True(t, ds.Debug("view"))
 	require.True(t, ds.Debug("ccc"))
+
+	ds = NewDebugSet("*")
+	require.True(t, ds.Debug("aaa"))
+	require.True(t, ds.Debug("bbb"))
+	require.True(t, ds.Debug("echo:aa"))
+	require.True(t, ds.Debug("echo"))
+	require.True(t, ds.Debug("view:aa"))
+	require.True(t, ds.Debug("view"))
+	require.True(t, ds.Debug("ccc"))
 }

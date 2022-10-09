@@ -15,12 +15,17 @@ type DebugSet interface {
 }
 
 type debugSet struct {
+	full  bool
 	none  bool
 	items map[string]struct{}
 }
 
 // Debug check weather a debug flag is enabled
 func (d *debugSet) Debug(v string) bool {
+	if d.full {
+		return true
+	}
+
 	if d.none {
 		return false
 	}
@@ -51,6 +56,9 @@ func NewDebugSet(debug string) DebugSet {
 	debug = strings.ToLower(strings.TrimSpace(debug))
 	if debug == "" {
 		return &debugSet{none: true}
+	}
+	if debug == DebugWildcard {
+		return &debugSet{full: true}
 	}
 	items := map[string]struct{}{}
 	for _, item := range strings.Split(debug, ",") {

@@ -7,7 +7,7 @@ A Go library to make code more elegant
 
 ## Donation
 
-Check https://guoyk93.github.io/#donation
+Check https://guoyk.xyz/donation
 
 ## Credits
 

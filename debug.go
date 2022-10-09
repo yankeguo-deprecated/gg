@@ -6,7 +6,6 @@ import (
 )
 
 const (
-	DebugNone      = "-"
 	DebugWildcard  = "*"
 	DebugSeparator = ":"
 )
@@ -50,7 +49,7 @@ func (d *debugSet) Debug(v string) bool {
 // use '*' for wildcard, for example '*', 'echo:*,view:*'
 func NewDebugSet(debug string) DebugSet {
 	debug = strings.ToLower(strings.TrimSpace(debug))
-	if debug == "" || debug == DebugNone {
+	if debug == "" {
 		return &debugSet{none: true}
 	}
 	items := map[string]struct{}{}

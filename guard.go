@@ -5,6 +5,20 @@ import (
 	"fmt"
 )
 
+// Suppress set err to nil if one of fn returns true
+func Suppress(err *error, fns ...F11[error, bool]) error {
+	if *err == nil {
+		return *err
+	}
+	for _, fn := range fns {
+		if fn(*err) {
+			*err = nil
+			return *err
+		}
+	}
+	return *err
+}
+
 // Guard recover from panic and set err
 func Guard(err *error) {
 	if r := recover(); r != nil {

@@ -4,8 +4,20 @@ import (
 	"context"
 	"errors"
 	"github.com/stretchr/testify/require"
+	"os"
 	"testing"
 )
+
+func TestSuppress(t *testing.T) {
+	var err error
+	e := Suppress(&err)
+	require.NoError(t, err)
+	require.Equal(t, err, e)
+	err = os.ErrNotExist
+	e = Suppress(&err, os.IsNotExist)
+	require.NoError(t, err)
+	require.Equal(t, err, e)
+}
 
 func TestGuard(t *testing.T) {
 	var err error

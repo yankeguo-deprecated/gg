@@ -37,3 +37,9 @@ func TestValues(t *testing.T) {
 	sort.Ints(keys)
 	require.Equal(t, []int{2, 3}, keys)
 }
+
+func TestFilter(t *testing.T) {
+	require.Equal(t, []string{"hell", "dull"}, Filter([]string{"hell", "hello", "dull"}, func(s string) bool {
+		return len(s)%2 == 0
+	}))
+}

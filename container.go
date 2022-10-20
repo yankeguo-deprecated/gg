@@ -1,5 +1,6 @@
 package gg
 
+// Map convert a slice to another by mapping each element
 func Map[T any, U any](s []T, fn func(T) U) []U {
 	var o []U
 	if s == nil {
@@ -12,6 +13,7 @@ func Map[T any, U any](s []T, fn func(T) U) []U {
 	return o
 }
 
+// Set convert a slice of comparables into a Set-like map
 func Set[T comparable](s []T) map[T]struct{} {
 	o := make(map[T]struct{})
 	for _, k := range s {
@@ -20,6 +22,7 @@ func Set[T comparable](s []T) map[T]struct{} {
 	return o
 }
 
+// Keys extract keys of map
 func Keys[T comparable, U any](m map[T]U) []T {
 	var o []T
 	for k := range m {
@@ -28,6 +31,7 @@ func Keys[T comparable, U any](m map[T]U) []T {
 	return o
 }
 
+// Values extract values of map
 func Values[T comparable, U any](m map[T]U) []U {
 	var o []U
 	for _, v := range m {
@@ -36,6 +40,7 @@ func Values[T comparable, U any](m map[T]U) []U {
 	return o
 }
 
+// Filter returns a new slice with element filtered
 func Filter[T any](s []T, fn func(T) bool) []T {
 	var o []T
 	for _, v := range s {

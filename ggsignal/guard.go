@@ -7,7 +7,7 @@ import (
 	"syscall"
 )
 
-// Guard guard the run stop func with signal handling, default handles SIGINT and SIGTERM
+// Guard wraps the run/stop functions with signal handling, default handles SIGINT and SIGTERM
 func Guard(run, stop func() error, sigs ...os.Signal) (err error) {
 	if len(sigs) == 0 {
 		sigs = []os.Signal{syscall.SIGINT, syscall.SIGTERM}
@@ -16,6 +16,7 @@ func Guard(run, stop func() error, sigs ...os.Signal) (err error) {
 	chErr := make(chan error, 1)
 	chSig := make(chan os.Signal, 1)
 	signal.Notify(chSig, sigs...)
+	defer signal.Stop(chSig)
 
 	go func() {
 		chErr <- run()
@@ -29,5 +30,7 @@ func Guard(run, stop func() error, sigs ...os.Signal) (err error) {
 	}
 
 	err = stop()
+	<-chErr
+
 	return
 }

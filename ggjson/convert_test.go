@@ -14,7 +14,7 @@ func TestTranslate(t *testing.T) {
 		B string `json:"a"`
 	}
 
-	out, err := Translate[T2](T1{A: "bbb"})
+	out, err := Convert[T2](T1{A: "bbb"})
 	require.NoError(t, err)
 	require.Equal(t, "bbb", out.B)
 }

@@ -43,3 +43,8 @@ func TestFilter(t *testing.T) {
 		return len(s)%2 == 0
 	}))
 }
+
+func TestRepeat(t *testing.T) {
+	require.Equal(t, []string{"a", "a"}, Repeat(2, "a"))
+	require.Equal(t, []int{5, 5}, Repeat(2, 5))
+}

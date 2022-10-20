@@ -50,3 +50,12 @@ func Filter[T any](s []T, fn func(T) bool) []T {
 	}
 	return o
 }
+
+// Repeat create a slice with a value repeated n times
+func Repeat[T any](n int, v T) []T {
+	out := make([]T, n, n)
+	for i := range out {
+		out[i] = v
+	}
+	return out
+}

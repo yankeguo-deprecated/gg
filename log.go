@@ -18,17 +18,17 @@ type Logger interface {
 
 var (
 	// DefaultLogger The global default logger
-	DefaultLogger Logger = &sysLogger{}
+	DefaultLogger Logger = &stdLogger{}
 )
 
-// sysLogger is used as a placeholder for the default logger
-type sysLogger struct{}
+// stdLogger is used as a placeholder for the default logger
+type stdLogger struct{}
 
-func (n *sysLogger) Log(v ...interface{}) {
+func (n *stdLogger) Log(v ...interface{}) {
 	_ = log.Output(2, fmt.Sprint(v...))
 }
 
-func (n *sysLogger) Logf(format string, v ...interface{}) {
+func (n *stdLogger) Logf(format string, v ...interface{}) {
 	_ = log.Output(2, fmt.Sprintf(format, v...))
 }
 
